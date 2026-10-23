@@ -1,0 +1,464 @@
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 400;
+}
+
+.welcome{
+    color: #8D7C6A;
+    font-size: 70px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.welcome-text{
+    width: 600px;
+    /* border: 1px solid rgb(44, 26, 26); */
+}
+
+.form-label{
+    font-size: larger;
+    color: #52402c;
+}
+
+/* html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+} */
+
+.welcome-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.form-control{
+    width: 340px;
+    border: 3px solid #E1D8CB;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.submit-btn:hover {
+    background-color: #8D7C6A;
+    border-color: #8D7C6A;
+    color: rgb(239, 221, 210);
+}
+.submit-btn{
+    background-color: #E1D8CB;
+    border: 3px solid #8D7C6A;
+    color: #8D7C6A;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.intro-paper{
+    background-image: url("./Photos/intro-paper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* -------game------- */
+
+.game-paper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+.intro-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#typing-text {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 40px;
+    color: #8D7C6A;
+}
+
+
+/* Quiz layout */
+
+.quiz-card {
+    max-width: 650px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Answer choices */
+
+.answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.answer-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 2px solid #eadfd8;
+    border-radius: 14px;
+    background: #fffaf7;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.answer-option:hover {
+    border-color: #e6b6c4;
+    background: #fff0f4;
+}
+
+.answer-option:has(input:checked) {
+    border-color: #d995aa;
+    background: #fceaf0;
+}
+
+.answer-option input[type="radio"] {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    accent-color: #c77993;
+    cursor: pointer;
+}
+
+.answer-option input:disabled {
+    cursor: default;
+}
+
+/* Written answer box */
+
+#progress-bar {
+    background-color: #d995aa;
+}
+
+#written-answer {
+    border: 2px solid #eadfd8;
+    border-radius: 14px;
+    background: #fffaf7;
+}
+
+#written-answer:focus {
+    border-color: #d995aa;
+    box-shadow: 0 0 0 0.2rem rgba(217, 149, 170, 0.2);
+}
+
+/* Typing heading */
+
+#typing-text {
+    min-height: 1.5em;
+}
+
+/* Small screens */
+
+@media (max-width: 576px) {
+    .quiz-card {
+        padding: 20px !important;
+    }
+
+    .answer-option {
+        padding: 13px;
+    }
+}
+
+.check-ans-btn{
+    background-color: #E1D8CB;
+    border: 3px solid #8D7C6A;
+    color: #8D7C6A;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.quiz-btn{
+    background-color: #E1D8CB;
+    border: 3px solid #8D7C6A;
+    color: #8D7C6A;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+@media (max-width: 576px) {
+    main {
+        padding: 15px;
+    }
+
+    #quiz-screen {
+        padding: 20px !important;
+    }
+}
+#quiz-screen > .d-flex {
+    justify-content: center !important;
+    gap: 25px;
+}
+#question-text {
+    text-align: center;
+}
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   CONFETTI CELEBRATION 
+========================================== */
+
+.confetti-piece {
+    position: fixed;
+    top: -20px;
+    z-index: 9999;
+    pointer-events: none;
+    border-radius: 2px;
+    animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(900deg);
+        opacity: 0;
+    }
+}
+.quiz-completed{
+    color: #8D7C6A;
+    font-size: 70px;
+}
+
+#final-score{
+    font-size: large;
+    color: #685541;
+}
+
+#result-message{
+    font-size: larger;
+    color: #685541;
+}
+
+/* ------answer----- */
+
+
+
+/* Letter page */
+.letter-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 16px;
+    overflow: visible;
+    background-color: #fff8f5;
+    color: #8D7C6A;
+}
+
+.envelope-hint {
+    font-size: clamp(25px, 5vw, 34px);
+    margin: 0 0 5px;
+}
+
+.envelope-instruction {
+    font-size: clamp(16px, 3vw, 20px);
+    margin: 10px 0 0;
+}
+
+.envelope-scene {
+    position: relative;
+    width: min(420px, 88vw);
+    height: 490px;
+    flex-shrink: 0;
+    perspective: 1200px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 260px;
+    bottom: 45px;
+    left: 0;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #f5bfd0;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.letter {
+    position: absolute;
+    width: 88%;
+    height: 350px;
+    left: 6%;
+    bottom: 0;
+    background: #fffdfb;
+    border: 2px solid #f0d9dc;
+    border-radius: 5px;
+    text-align: left;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 5px 18px rgba(100, 60, 60, 0.12);
+    scrollbar-color: #e8b1c3 #fffdfb;
+
+    z-index: 2;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease,
+        visibility 0s linear 1s;
+}
+
+.letter-content {
+    padding: 26px 24px;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.letter-content p {
+    margin: 0 0 17px;
+}
+
+.letter-content strong {
+    color: #b76e87;
+    font-size: 19px;
+}
+
+.letter-signature {
+    margin-top: 25px !important;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #f7c9d7;
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+    z-index: 3;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #eea9c0;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 65%
+    );
+    transform-origin: top center;
+    transform: rotateX(0deg);
+    transition: transform 0.8s ease;
+    backface-visibility: hidden;
+    z-index: 4;
+}
+
+.envelope-scene.opened .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-scene.opened .letter {
+    z-index: 5;
+    transform: translateY(-60px);
+    opacity: 1;
+    visibility: visible;
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .envelope-scene {
+        width: 88vw;
+        height: 450px;
+    }
+
+    .envelope {
+        height: 220px;
+        bottom: 35px;
+    }
+
+    .letter {
+        height: 320px;
+    }
+
+    .letter-content {
+        padding: 20px 17px;
+        font-size: 15px;
+    }
+
+    .letter-content strong {
+        font-size: 17px;
+    }
+
+    .envelope-scene.opened .letter {
+        transform: translateY(-45px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .letter,
+    .envelope-flap {
+        transition-duration: 0.01ms;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+/* .answer-paper {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./Photos/background-3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+} */

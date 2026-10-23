@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final..</title>
+
+    <link rel="icon" type="image/x-icon" href="./Photos/Ico.ico">
+
+    <!-- font links -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap -->
+    
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+
+    <!-- links_for_cssandjava -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+
+</head>
+<body>
+
+
+    <main class="letter-page">
+
+        <p class="envelope-hint" id="envelopeHint">
+            A little letter for yaa...
+        </p>
+    
+        <div class="envelope-scene" id="envelopeScene">
+    
+            <div class="envelope">
+    
+                <div class="envelope-back"></div>
+    
+                <div class="letter" id="loveLetter">
+                    <div class="letter-content">
+    
+                        <p>Dear Theo,</p>
+    
+                        <p>
+                            If you've made it all the way here,
+                            then I think you deserve your answer.
+                        </p>
+    
+                        <p>
+                            <strong>
+                                Yes!!, Theo. I'd love to be your girlfriend!!!
+                            </strong>
+                        </p>
+    
+                        <p>
+                            You make me happy in ways I don't always
+                            know how to explain, and I hope we make
+                            lots of good memories together.
+                        </p>
+    
+                        <p>
+                            Here's to more laughter and more moments
+                            with you.
+                        </p>
+    
+                        <p class="letter-signature">
+                            With love,<br>
+                            Your Luna
+                        </p>
+    
+                    </div>
+                </div>
+    
+                <div class="envelope-front"></div>
+                <div class="envelope-flap"></div>
+    
+            </div>
+    
+        </div>
+    
+        <p class="envelope-instruction" id="envelopeInstruction">
+            Click the envelope to open it
+        </p>
+    
+    </main>
+
+    
+    <!-- <div>
+        <img src="./Photos/background-3.jpg" class="answer-paper w-100" alt="" srcset="">
+    </div> -->
+    
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const envelope = document.getElementById("envelopeScene");
+            const hint = document.getElementById("envelopeHint");
+            const instruction = document.getElementById("envelopeInstruction");
+        
+            if (!envelope) {
+                console.log("Envelope not found. Check the HTML id.");
+                return;
+            }
+        
+            envelope.addEventListener("click", function () {
+                envelope.classList.add("opened");
+        
+                if (hint) {
+                    hint.textContent = "Your answer, Theo.";
+                }
+        
+                if (instruction) {
+                    instruction.textContent = "Made just for you.";
+                }
+            });
+        });
+        </script>
+
+
+        </body>
+        </html>
+        
+
+
+
+</body>
+</html>
